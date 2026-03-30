@@ -20,6 +20,7 @@ public class HanoiRhymer extends defaultCountingOutRhymer {
         return totalRejected;
     }
 
+    @Override
     /**
      * Dodaje element, jeśli spełnia warunki.
      * Jeśli nie – zwiększa licznik odrzuceń.
