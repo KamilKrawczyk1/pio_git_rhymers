@@ -1,17 +1,36 @@
 package edu.kis.vh.nursery;
 
+/**
+ * Klasa rozszerza defaultCountingOutRhymer.
+ * Dodaje licznik elementów, które zostały odrzucone.
+ */
 public class HanoiRhymer extends defaultCountingOutRhymer {
 
-int totalRejected = 0;
+    /**
+     * Liczba odrzuconych elementów
+     */
+    private int totalRejected = 0;
 
+    /**
+     * Zwraca liczbę odrzuconych elementów.
+     *
+     * @return liczba odrzuconych elementów
+     */
     public int reportRejected() {
         return totalRejected;
     }
 
+    @Override
+    /**
+     * Dodaje element, jeśli spełnia warunki.
+     * Jeśli nie – zwiększa licznik odrzuceń.
+     *
+     * @param in element do dodania
+     */
     public void countIn(int in) {
-    if (!callCheck() && in > peekaboo())
+        if (!callCheck() && in > Peekaboo())
             totalRejected++;
-            else
-                super.countIn(in);
+        else
+            super.countIn(in);
     }
 }
